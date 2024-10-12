@@ -71,7 +71,8 @@ void loop() {
   // Apply EMA filter
   dist_ema = (_EMA_ALPHA * dist_raw) + ((1 - _EMA_ALPHA) * dist_ema);
 
-  // Adjust servo position based on the filtered distance
+  // adjust servo position based on the filtered distance
+  // add your code here!
   int servo_pos = map(dist_ema, _TARGET_LOW, _TARGET_HIGH, 0, 180); // Map distance to servo angle
   servo_pos = constrain(servo_pos, 0, 180);                         // Constrain angle between 0 and 180 degrees
   int servo_duty = map(servo_pos, 0, 180, _DUTY_MIN, _DUTY_MAX);    // Convert angle to duty cycle
